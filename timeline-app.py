@@ -132,26 +132,3 @@ st.plotly_chart(fig, use_container_width=True)
 
 # %%
 
-import streamlit as st
-import pandas as pd
-import plotly.express as px
-
-# Load your combined CSV or DataFrame
-df = diag_df.copy()
-
-st.title("Distribution of Length of Stay by ICD Group")
-
-# Create violin plot
-st.header("Violin Plot: Distribution of LOS by ICD Group")
-
-fig = px.violin(
-    df,
-    x='icd_code',  # Use 'icd_code' or another column representing ICD groups
-    y='los',       # Use 'los' or another column representing Length of Stay
-    title="Distribution of Length of Stay by ICD Group",
-    labels={'icd_code': 'ICD Group', 'los': 'Length of Stay'},
-    box=True,      # Show box plot inside the violin plot
-    points="all"   # Show all data points
-)
-
-st.plotly_chart(fig, use_container_width=True)

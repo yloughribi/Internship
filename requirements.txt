@@ -1,6 +1,11 @@
 pandas
-seaborn
+sqlalchemy
+psycopg2-binary
 matplotlib
-plotly
+seaborn
+scikit-learn
+jupyterlab
+ipykernel
 streamlit
+plotly
 numpy
