@@ -49,31 +49,21 @@ diag_df = diag_df.sort_values(by="subject_id")
 # %%
 diag_df = diag_df.reset_index(drop=True)
 
-#%%
-
-st.write(diag_df.columns)
-
 # %%
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Load your combined CSV or DataFrame
 df = diag_df.copy()
 
 st.title("Visualization Patient Data MIMIC-IV dataset")
 
-# Count the occurrences of each ICD code
-diagnosis_counts = df['icd_code'].value_counts()
+diagnosis_counts = df['icd_code'].value_counts().compute()
+top_20_diagnoses = diagnosis_counts.sort_values(ascending=False).head(20)
 
-# Select the top 20 ICD codes
-top_20_diagnoses = diagnosis_counts.head(20)
-
-# Create a DataFrame for the top 20 ICD codes
 top_20_df = top_20_diagnoses.reset_index()
 top_20_df.columns = ['icd_code', 'count']
 
-# Create bar chart
 st.header("Top 20 ICD Codes")
 
 fig = px.bar(
