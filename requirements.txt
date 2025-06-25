@@ -11,3 +11,4 @@ plotly
 numpy
 dask[complete]
 pywaffle
+ipywidgets
