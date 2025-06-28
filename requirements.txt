@@ -12,3 +12,5 @@ numpy
 dask[complete]
 pywaffle
 ipywidgets
+xgboost
+impyute
