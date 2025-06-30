@@ -8,10 +8,11 @@ jupyterlab
 ipykernel
 streamlit
 plotly
-numpy
+numpy==2.2
 dask[complete]
 pywaffle
 ipywidgets
 xgboost
 impyute
 imblearn
+shap
